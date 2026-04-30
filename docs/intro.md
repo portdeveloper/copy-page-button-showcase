@@ -21,6 +21,8 @@ module.exports = {
 
 That's it! The copy button will automatically appear in the table of contents sidebar on every docs page.
 
+Markdown URL routes are optional. This showcase enables them, so this page is also available at `https://portdeveloper.github.io/copy-page-button-showcase/docs/intro.md`.
+
 ## Try It Now
 
 You can see the copy button in action on this very page. Look for the **Copy page** button in the sidebar on the right. Click it to see the dropdown with all available actions:

@@ -35,6 +35,25 @@ module.exports = {
 
 **Default:** All actions are enabled: `['copy', 'view', 'chatgpt', 'claude', 'gemini']`
 
+## Markdown URL Routes
+
+Markdown URL routes are optional. Enable them when you want each generated docs page to also be available as plain markdown:
+
+```js
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-copy-page-button',
+      {
+        generateMarkdownRoutes: true,
+      },
+    ],
+  ],
+};
+```
+
+For a page at `https://your-docs.com/docs/intro`, the production build writes a sibling markdown file served at `https://your-docs.com/docs/intro.md`. When enabled, the ChatGPT, Claude, and Gemini actions use the `.md` URL so AI tools can fetch the clean markdown page directly.
+
 ### Example Configurations
 
 ```js
