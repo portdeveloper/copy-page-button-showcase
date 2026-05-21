@@ -14,6 +14,53 @@ const packageManagers = [
   {name: 'bun', command: 'bun add docusaurus-plugin-copy-page-button'},
 ];
 
+const usedBySites = [
+  {site: 'Ethereum execution-apis', href: 'https://ethereum.github.io/execution-apis/'},
+  {site: 'Sui', href: 'https://docs.sui.io'},
+  {site: 'Walrus', href: 'https://docs.wal.app'},
+  {site: 'Seal', href: 'https://seal-docs.wal.app'},
+  {site: 'SuiNS', href: 'https://docs.suins.io'},
+  {site: 'Monad', href: 'https://docs.monad.xyz'},
+  {site: 'Flare', href: 'https://dev.flare.network'},
+  {site: 'Kaia', href: 'https://docs.kaia.io'},
+  {site: 'Nillion', href: 'https://docs.nillion.com'},
+  {site: 'Chronicle', href: 'https://docs.chroniclelabs.org'},
+  {site: 'Cardano', href: 'https://docs.cardano.org'},
+  {site: 'Arbitrum', href: 'https://docs.arbitrum.io'},
+  {site: 'Puppeteer', href: 'https://pptr.dev'},
+];
+
+const reviewItems = [
+  {
+    site: 'Oasis Protocol docs',
+    href: 'https://github.com/oasisprotocol/docs/pull/1736',
+    status: 'Open',
+    detail: 'Mergeable with a passing Netlify deploy preview.',
+    tone: 'statusReady',
+  },
+  {
+    site: 'Ceramic docs',
+    href: 'https://github.com/ceramicnetwork/docs-docusaurus/pull/114',
+    status: 'Open',
+    detail: 'Mergeable and awaiting maintainer review.',
+    tone: 'statusReady',
+  },
+  {
+    site: 'Cypress documentation',
+    href: 'https://github.com/cypress-io/cypress-documentation/pull/6462',
+    status: 'Needs CLA',
+    detail: 'CircleCI passed; CLA assistant is still pending.',
+    tone: 'statusBlocked',
+  },
+  {
+    site: 'pnpm docs',
+    href: 'https://github.com/pnpm/pnpm.io/pull/806',
+    status: 'Needs deploy auth',
+    detail: 'CodeRabbit approved; Vercel needs team authorization.',
+    tone: 'statusBlocked',
+  },
+];
+
 function InstallCommand() {
   const [active, setActive] = useState(0);
   const [copied, setCopied] = useState(false);
@@ -54,6 +101,45 @@ function InstallCommand() {
         </button>
       </div>
     </div>
+  );
+}
+
+function AdoptionSection() {
+  return (
+    <section className={styles.adoptionSection}>
+      <div className={styles.sectionHeader}>
+        <Heading as="h2">Used by docs teams</Heading>
+        <p>
+          Production documentation sites using this plugin to make pages easier
+          to copy, inspect, and open in AI tools.
+        </p>
+      </div>
+      <div className={styles.usedByList}>
+        {usedBySites.map((item) => (
+          <Link key={item.href} className={styles.usedByLink} href={item.href}>
+            {item.site}
+          </Link>
+        ))}
+      </div>
+      <div className={styles.reviewHeader}>
+        <Heading as="h3">In review</Heading>
+        <p>Recent PRs adding the plugin, last checked on May 21, 2026.</p>
+      </div>
+      <div className={styles.adoptionGrid}>
+        {reviewItems.map((item) => (
+          <Link
+            key={item.href}
+            className={styles.adoptionItem}
+            href={item.href}>
+            <span className={clsx(styles.status, styles[item.tone])}>
+              {item.status}
+            </span>
+            <strong>{item.site}</strong>
+            <span>{item.detail}</span>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -120,6 +206,7 @@ export default function Home(): ReactNode {
             <p>Responsive design that works on desktop, tablet, and mobile with smart fallback positioning.</p>
           </div>
         </div>
+        <AdoptionSection />
       </main>
     </Layout>
   );

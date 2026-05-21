@@ -92,3 +92,149 @@
 .copyButton:hover {
   color: #fff;
 }
+
+.adoptionSection {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.sectionHeader {
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.sectionHeader h2 {
+  margin-bottom: 0.5rem;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.usedByList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.usedByLink {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-decoration: none;
+  background: var(--ifm-background-surface-color);
+}
+
+.usedByLink:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.reviewHeader {
+  margin-bottom: 1rem;
+}
+
+.reviewHeader h3 {
+  margin-bottom: 0.35rem;
+}
+
+.reviewHeader p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.adoptionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.adoptionItem {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem;
+  min-height: 160px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  background: var(--ifm-background-surface-color);
+  transition:
+    border-color 0.15s,
+    transform 0.15s;
+}
+
+.adoptionItem:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+}
+
+.adoptionItem strong {
+  line-height: 1.2;
+}
+
+.adoptionItem span:last-child {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.status {
+  width: fit-content;
+  align-self: start;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.statusReady {
+  color: #0f5132;
+  background: #d1e7dd;
+}
+
+.statusBlocked {
+  color: #664d03;
+  background: #fff3cd;
+}
+
+@media screen and (max-width: 996px) {
+  .installBlock {
+    width: 100%;
+    max-width: 580px;
+  }
+
+  .installRow {
+    min-width: 0;
+  }
+
+  .installCode {
+    overflow-x: auto;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+  }
+
+  .adoptionGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .adoptionGrid {
+    grid-template-columns: 1fr;
+  }
+}
