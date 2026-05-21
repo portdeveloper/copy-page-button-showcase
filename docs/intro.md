@@ -19,7 +19,7 @@ module.exports = {
 };
 ```
 
-That's it! The copy button will automatically appear in the table of contents sidebar on every docs page.
+That's it! The copy button will automatically appear in the table of contents sidebar on every docs page. On smaller screens, or on pages without a table of contents, it moves into the article column so it remains visible.
 
 ## Try It Now
 
@@ -29,4 +29,5 @@ You can see the copy button in action on this very page. Look for the **Copy pag
 - **View as Markdown** — Opens the extracted markdown in a new tab
 - **Open in ChatGPT** — Sends the page to ChatGPT with a pre-filled prompt
 - **Open in Claude** — Sends the page to Claude with a pre-filled prompt
+- **Open in Perplexity** — Sends the page to Perplexity with a pre-filled prompt
 - **Open in Gemini** — Sends the page to Gemini with a pre-filled prompt

@@ -31,9 +31,13 @@ module.exports = {
 | `view` | View as Markdown in new tab |
 | `chatgpt` | Open in ChatGPT |
 | `claude` | Open in Claude |
+| `perplexity` | Open in Perplexity |
 | `gemini` | Open in Gemini |
+| `mcp-copy` | Copy MCP server JSON |
+| `mcp-cursor` | Install MCP server in Cursor |
+| `mcp-vscode` | Install MCP server in VS Code |
 
-**Default:** All actions are enabled: `['copy', 'view', 'chatgpt', 'claude', 'gemini']`
+**Default:** Standard actions are enabled: `['copy', 'view', 'chatgpt', 'claude', 'perplexity', 'gemini']`. MCP actions are enabled automatically only when `mcpServer` is configured.
 
 ### Example Configurations
 
@@ -45,7 +49,76 @@ enabledActions: ['copy']
 enabledActions: ['copy', 'view']
 
 // Only AI tools
-enabledActions: ['chatgpt', 'claude', 'gemini']
+enabledActions: ['chatgpt', 'claude', 'perplexity', 'gemini']
+```
+
+## Placement
+
+By default, the plugin places the button in the table of contents sidebar on desktop and falls back to the article column on mobile or no-TOC pages.
+
+```js
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-copy-page-button',
+      {
+        placement: 'article',
+      },
+    ],
+  ],
+};
+```
+
+| Value | Behavior |
+|-------|----------|
+| `auto` | Sidebar on desktop when visible, article on mobile/no-TOC pages |
+| `toc` | Table of contents only |
+| `article` | Top of the article column |
+
+## Manual React Component
+
+Sites that need exact placement can disable automatic injection and render the component from a swizzled Docusaurus theme component:
+
+```js
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-copy-page-button',
+      {
+        injectButton: false,
+        generateMarkdownRoutes: true,
+      },
+    ],
+  ],
+};
+```
+
+```tsx
+import CopyPageButton from 'docusaurus-plugin-copy-page-button/react';
+
+export default function MyDocHeader() {
+  return <CopyPageButton generateMarkdownRoutes />;
+}
+```
+
+## MCP Actions
+
+If your docs expose an MCP server, configure it to add MCP actions to the dropdown:
+
+```js
+module.exports = {
+  plugins: [
+    [
+      'docusaurus-plugin-copy-page-button',
+      {
+        mcpServer: {
+          name: 'my-docs',
+          url: 'https://docs.example.com/mcp',
+        },
+      },
+    ],
+  ],
+};
 ```
 
 ## Custom Styling

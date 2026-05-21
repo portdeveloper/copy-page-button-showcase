@@ -24,7 +24,14 @@ const config: Config = {
     locales: ['en'],
   },
 
-  plugins: ['docusaurus-plugin-copy-page-button'],
+  plugins: [
+    [
+      'docusaurus-plugin-copy-page-button',
+      {
+        generateMarkdownRoutes: true,
+      },
+    ],
+  ],
 
   presets: [
     [
