@@ -15,25 +15,25 @@ const packageManagers = [
 ];
 
 const usedBySites = [
-  {site: 'React Native', href: 'https://reactnative.dev'},
-  {site: 'Puppeteer', href: 'https://pptr.dev'},
-  {site: 'pnpm', href: 'https://pnpm.io'},
-  {site: 'PlayCanvas', href: 'https://developer.playcanvas.com'},
-  {site: 'Sui', href: 'https://docs.sui.io'},
-  {site: 'Besu', href: 'https://besu.hyperledger.org'},
-  {site: 'Ethereum execution-apis', href: 'https://ethereum.github.io/execution-apis/'},
-  {site: 'Arbitrum', href: 'https://docs.arbitrum.io'},
-  {site: 'Cardano', href: 'https://docs.cardano.org'},
-  {site: 'Seal', href: 'https://seal-docs.wal.app'},
-  {site: 'Walrus', href: 'https://docs.wal.app'},
-  {site: 'SuiNS', href: 'https://docs.suins.io'},
-  {site: 'Kaia', href: 'https://docs.kaia.io'},
-  {site: 'Chronicle', href: 'https://docs.chroniclelabs.org'},
-  {site: 'FitFileViewer', href: 'https://nick2bad4u.github.io/FitFileViewer/'},
-  {site: 'Uptime Watcher', href: 'https://nick2bad4u.github.io/Uptime-Watcher/'},
-  {site: 'Flare', href: 'https://dev.flare.network'},
-  {site: 'Hashi', href: 'https://mystenlabs.github.io/hashi/design/'},
-  {site: 'Nillion', href: 'https://docs.nillion.com'},
+  {site: 'React Native', href: 'https://reactnative.dev', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/3840px-React-icon.svg.png'},
+  {site: 'Puppeteer', href: 'https://pptr.dev', logo: 'https://github.com/puppeteer.png'},
+  {site: 'pnpm', href: 'https://pnpm.io', logo: 'https://github.com/pnpm.png'},
+  {site: 'PlayCanvas', href: 'https://developer.playcanvas.com', logo: 'https://github.com/playcanvas.png'},
+  {site: 'Sui', href: 'https://docs.sui.io', logo: 'https://github.com/MystenLabs.png'},
+  {site: 'Besu', href: 'https://besu.hyperledger.org', logo: 'https://github.com/hyperledger.png'},
+  {site: 'Ethereum execution-apis', href: 'https://ethereum.github.io/execution-apis/', logo: 'https://github.com/ethereum.png'},
+  {site: 'Arbitrum', href: 'https://docs.arbitrum.io', logo: 'https://github.com/OffchainLabs.png'},
+  {site: 'Cardano', href: 'https://docs.cardano.org', logo: 'https://github.com/cardano-foundation.png'},
+  {site: 'Seal', href: 'https://seal-docs.wal.app', logo: 'https://github.com/MystenLabs.png'},
+  {site: 'Walrus', href: 'https://docs.wal.app', logo: 'https://github.com/MystenLabs.png'},
+  {site: 'SuiNS', href: 'https://docs.suins.io', logo: 'https://github.com/MystenLabs.png'},
+  {site: 'Kaia', href: 'https://docs.kaia.io', logo: 'https://github.com/kaiachain.png'},
+  {site: 'Chronicle', href: 'https://docs.chroniclelabs.org', logo: 'https://github.com/chronicleprotocol.png'},
+  {site: 'FitFileViewer', href: 'https://nick2bad4u.github.io/FitFileViewer/', logo: 'https://github.com/Nick2bad4u.png'},
+  {site: 'Uptime Watcher', href: 'https://nick2bad4u.github.io/Uptime-Watcher/', logo: 'https://github.com/Nick2bad4u.png'},
+  {site: 'Flare', href: 'https://dev.flare.network', logo: 'https://github.com/flare-foundation.png'},
+  {site: 'Hashi', href: 'https://mystenlabs.github.io/hashi/design/', logo: 'https://github.com/MystenLabs.png'},
+  {site: 'Nillion', href: 'https://docs.nillion.com', logo: 'https://github.com/NillionNetwork.png'},
   {site: '1claw Docs', href: 'https://docs.1claw.xyz'},
   {site: 'Agent Layer', href: 'https://agent-layer.dev'},
   {site: 'Ai DIY', href: 'https://docs.yiw.me'},
@@ -198,6 +198,16 @@ function AdoptionSection() {
       <div className={styles.usedByList}>
         {usedBySites.map((item) => (
           <Link key={item.href} className={styles.usedByLink} href={item.href}>
+            {item.logo && (
+              <img
+                className={styles.usedByLogo}
+                src={item.logo}
+                alt=""
+                loading="lazy"
+                width={20}
+                height={20}
+              />
+            )}
             {item.site}
           </Link>
         ))}

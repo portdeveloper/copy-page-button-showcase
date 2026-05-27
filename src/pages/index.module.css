@@ -121,7 +121,10 @@
 }
 
 .usedByLink {
-  padding: 0.55rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.45rem;
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 999px;
   color: var(--ifm-font-color-base);
@@ -130,6 +133,15 @@
   line-height: 1.2;
   text-decoration: none;
   background: var(--ifm-background-surface-color);
+}
+
+.usedByLogo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  flex-shrink: 0;
 }
 
 .usedByLink:hover {
