@@ -26,6 +26,7 @@ const usedBySites = [
   {site: 'Cardano', href: 'https://docs.cardano.org', logo: 'https://github.com/cardano-foundation.png'},
   {site: 'Seal', href: 'https://seal-docs.wal.app', logo: 'https://seal-docs.wal.app/img/logo.svg'},
   {site: 'Walrus', href: 'https://docs.wal.app', logo: 'https://docs.wal.app/img/logo.svg'},
+  {site: 'Seeed Studio Wiki', href: 'https://wiki.seeedstudio.com', logo: 'https://github.com/Seeed-Studio.png'},
   {site: 'SuiNS', href: 'https://docs.suins.io', logo: 'https://docs.suins.io/img/logo.svg'},
   {site: 'Kaia', href: 'https://docs.kaia.io', logo: 'https://github.com/kaiachain.png'},
   {site: 'Chronicle', href: 'https://docs.chroniclelabs.org', logo: 'https://github.com/chronicleprotocol.png'},
@@ -47,20 +48,6 @@ const reviewItems = [
     href: 'https://github.com/ionic-team/ionic-docs/pull/4499',
     status: 'In review',
     detail: 'Iterating on placement with @brandyscarney; button now lives above the TOC.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'Lexical docs',
-    href: 'https://github.com/facebook/lexical/pull/8568',
-    status: 'In review',
-    detail: 'Reviewed by @etrepum (Meta); follow-up debug info shared.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'Seeed Studio Wiki',
-    href: 'https://github.com/Seeed-Studio/wiki-documents/pull/4682',
-    status: 'Pending merge',
-    detail: 'Maintainer @nfs0619 confirmed; wiring locale labels before merging.',
     tone: 'statusReady',
   },
   {
