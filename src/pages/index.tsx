@@ -40,6 +40,7 @@ const usedBySites = [
   {site: 'Ai DIY', href: 'https://docs.yiw.me'},
   {site: 'Ovineko', href: 'https://ovineko.com'},
   {site: 'ThunderID', href: 'https://thunderid.dev'},
+  {site: 'Redux Toolkit', href: 'https://redux-toolkit.js.org'},
 ];
 
 const reviewItems = [
@@ -60,62 +61,6 @@ const reviewItems = [
   {
     site: 'Cypress documentation',
     href: 'https://github.com/cypress-io/cypress-documentation/pull/6462',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'Dagger docs',
-    href: 'https://github.com/dagger/dagger/pull/13045',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'Jest docs',
-    href: 'https://github.com/jestjs/jest/pull/16179',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'Logto docs',
-    href: 'https://github.com/logto-io/docs/pull/1400',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'Puffer Finance docs',
-    href: 'https://github.com/PufferFinance/website-docs/pull/103',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'Redux Toolkit docs',
-    href: 'https://github.com/reduxjs/redux-toolkit/pull/5299',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'SRS docs',
-    href: 'https://github.com/ossrs/srs-docs/pull/93',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'StreamElements docs',
-    href: 'https://github.com/StreamElements/docs/pull/86',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'tRPC docs',
-    href: 'https://github.com/trpc/trpc/pull/7379',
     status: 'Open',
     detail: 'Open PR awaiting maintainer review.',
     tone: 'statusReady',
