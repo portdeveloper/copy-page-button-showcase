@@ -50,7 +50,10 @@ const config: Config = {
 
   themeConfig: {
     colorMode: {
-      respectPrefersColorScheme: true,
+      // Keep the toggle a simple 2-state light<->dark switch. With
+      // respectPrefersColorScheme it becomes a 3-state system/light/dark
+      // cycle, so the first click off "system" only swaps the icon.
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'docusaurus-copy-page-button',

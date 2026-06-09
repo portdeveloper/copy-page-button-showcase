@@ -193,7 +193,7 @@ function AdoptionSection() {
     <section className={styles.adoptionSection}>
       <div className={styles.reviewHeader}>
         <Heading as="h3">In review</Heading>
-        <p>Recent PRs adding the plugin, last checked on May 21, 2026.</p>
+        <p>Recent PRs adding the plugin, last checked on June 9, 2026.</p>
       </div>
       <div className={styles.adoptionGrid}>
         {reviewItems.map((item) => (
