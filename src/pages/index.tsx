@@ -43,6 +43,39 @@ const usedBySites = [
   {site: 'Redux Toolkit', href: 'https://redux-toolkit.js.org'},
 ];
 
+const features = [
+  {
+    icon: '⚡',
+    title: 'Zero Config',
+    desc: 'Add one line to your Docusaurus config and the copy button appears automatically in the sidebar.',
+  },
+  {
+    icon: '🤖',
+    title: 'AI-Ready Markdown',
+    desc: 'Extracts clean markdown from your docs — perfect for pasting into ChatGPT, Claude, Gemini, or any LLM.',
+  },
+  {
+    icon: '🔗',
+    title: 'Open in AI Tools',
+    desc: 'One-click buttons to open your docs directly in ChatGPT, Claude, or Gemini with a pre-filled prompt.',
+  },
+  {
+    icon: '🎨',
+    title: 'Customizable',
+    desc: 'Custom styles, configurable actions, and flexible positioning. Show only the actions you need.',
+  },
+  {
+    icon: '🌓',
+    title: 'Theme-Aware',
+    desc: 'Automatically adapts to light and dark themes. Looks native on any Docusaurus site.',
+  },
+  {
+    icon: '📱',
+    title: 'Mobile-Friendly',
+    desc: 'Responsive design that works on desktop, tablet, and mobile with smart fallback positioning.',
+  },
+];
+
 const reviewItems = [
   {
     site: 'Ionic docs',
@@ -117,33 +150,47 @@ function InstallCommand() {
   );
 }
 
+function UsedByMarquee() {
+  // Duplicate the list so the track can loop seamlessly; the second copy is
+  // hidden from assistive tech and keyboard focus.
+  const track = [...usedBySites, ...usedBySites];
+  return (
+    <section className={styles.marqueeSection} aria-label="Used by docs teams">
+      <p className={styles.marqueeLabel}>Used by docs teams</p>
+      <div className={styles.marquee}>
+        <div className={styles.marqueeTrack}>
+          {track.map((item, i) => {
+            const isClone = i >= usedBySites.length;
+            return (
+              <Link
+                key={`${item.href}-${i}`}
+                className={styles.marqueeItem}
+                href={item.href}
+                aria-hidden={isClone || undefined}
+                tabIndex={isClone ? -1 : undefined}>
+                {item.logo && (
+                  <img
+                    className={styles.marqueeLogo}
+                    src={item.logo}
+                    alt=""
+                    loading="lazy"
+                    width={22}
+                    height={22}
+                  />
+                )}
+                <span>{item.site}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function AdoptionSection() {
   return (
     <section className={styles.adoptionSection}>
-      <div className={styles.sectionHeader}>
-        <Heading as="h2">Used by docs teams</Heading>
-        <p>
-          Production documentation sites using this plugin to make pages easier
-          to copy, inspect, and open in AI tools.
-        </p>
-      </div>
-      <div className={styles.usedByList}>
-        {usedBySites.map((item) => (
-          <Link key={item.href} className={styles.usedByLink} href={item.href}>
-            {item.logo && (
-              <img
-                className={styles.usedByLogo}
-                src={item.logo}
-                alt=""
-                loading="lazy"
-                width={20}
-                height={20}
-              />
-            )}
-            {item.site}
-          </Link>
-        ))}
-      </div>
       <div className={styles.reviewHeader}>
         <Heading as="h3">In review</Heading>
         <p>Recent PRs adding the plugin, last checked on May 21, 2026.</p>
@@ -160,6 +207,24 @@ function AdoptionSection() {
             <strong>{item.site}</strong>
             <span>{item.detail}</span>
           </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Features() {
+  return (
+    <section className={styles.featuresSection}>
+      <div className={styles.featureGrid}>
+        {features.map((feature) => (
+          <div key={feature.title} className={styles.featureCard}>
+            <span className={styles.featureIcon} aria-hidden="true">
+              {feature.icon}
+            </span>
+            <Heading as="h3">{feature.title}</Heading>
+            <p>{feature.desc}</p>
+          </div>
         ))}
       </div>
     </section>
@@ -200,35 +265,9 @@ export default function Home(): ReactNode {
       title="Copy Page Button for Docusaurus"
       description="A Docusaurus plugin that adds a copy page button to extract documentation content as markdown for AI tools">
       <HomepageHeader />
+      <UsedByMarquee />
       <main className="container" style={{padding: '3rem 0'}}>
-        <div className="row">
-          <div className="col col--4">
-            <Heading as="h3">Zero Config</Heading>
-            <p>Add one line to your Docusaurus config and the copy button appears automatically in the sidebar.</p>
-          </div>
-          <div className="col col--4">
-            <Heading as="h3">AI-Ready Markdown</Heading>
-            <p>Extracts clean markdown from your docs — perfect for pasting into ChatGPT, Claude, Gemini, or any LLM.</p>
-          </div>
-          <div className="col col--4">
-            <Heading as="h3">Open in AI Tools</Heading>
-            <p>One-click buttons to open your docs directly in ChatGPT, Claude, or Gemini with a pre-filled prompt.</p>
-          </div>
-        </div>
-        <div className="row" style={{marginTop: '2rem'}}>
-          <div className="col col--4">
-            <Heading as="h3">Customizable</Heading>
-            <p>Custom styles, configurable actions, and flexible positioning. Show only the actions you need.</p>
-          </div>
-          <div className="col col--4">
-            <Heading as="h3">Theme-Aware</Heading>
-            <p>Automatically adapts to light and dark themes. Looks native on any Docusaurus site.</p>
-          </div>
-          <div className="col col--4">
-            <Heading as="h3">Mobile-Friendly</Heading>
-            <p>Responsive design that works on desktop, tablet, and mobile with smart fallback positioning.</p>
-          </div>
-        </div>
+        <Features />
         <AdoptionSection />
       </main>
     </Layout>
