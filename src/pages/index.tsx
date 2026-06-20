@@ -41,6 +41,8 @@ const usedBySites = [
   {site: 'Ovineko', href: 'https://ovineko.com'},
   {site: 'ThunderID', href: 'https://thunderid.dev'},
   {site: 'Redux Toolkit', href: 'https://redux-toolkit.js.org'},
+  {site: 'Ionic', href: 'https://ionicframework.com/docs', logo: 'https://github.com/ionic-team.png'},
+  {site: 'Stryker', href: 'https://stryker-mutator.io', logo: 'https://github.com/stryker-mutator.png'},
 ];
 
 const features = [
