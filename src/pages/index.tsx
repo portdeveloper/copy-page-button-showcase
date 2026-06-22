@@ -80,31 +80,31 @@ const features = [
 
 const reviewItems = [
   {
-    site: 'Ionic docs',
-    href: 'https://github.com/ionic-team/ionic-docs/pull/4499',
-    status: 'In review',
-    detail: 'Iterating on placement with @brandyscarney; button now lives above the TOC.',
-    tone: 'statusReady',
-  },
-  {
-    site: 'Ceramic docs',
-    href: 'https://github.com/ceramicnetwork/docs-docusaurus/pull/114',
-    status: 'Open',
-    detail: 'Mergeable and awaiting maintainer review.',
-    tone: 'statusReady',
-  },
-  {
     site: 'Cypress documentation',
     href: 'https://github.com/cypress-io/cypress-documentation/pull/6462',
-    status: 'Open',
-    detail: 'Open PR awaiting maintainer review.',
+    status: 'In review',
+    detail: 'Maintainer reviewed; requested changes pushed, awaiting re-review.',
     tone: 'statusReady',
   },
   {
     site: 'Uniswap docs',
     href: 'https://github.com/Uniswap/docs/pull/1132',
     status: 'Open',
+    detail: 'Open PR; checks green, awaiting maintainer review.',
+    tone: 'statusReady',
+  },
+  {
+    site: 'BandChain docs',
+    href: 'https://github.com/bandprotocol/bandchain-docs/pull/93',
+    status: 'Open',
     detail: 'Open PR awaiting maintainer review.',
+    tone: 'statusReady',
+  },
+  {
+    site: 'Capacitor docs',
+    href: 'https://github.com/ionic-team/capacitor-docs/pull/556',
+    status: 'Open',
+    detail: "Ionic's Capacitor docs — open PR awaiting review.",
     tone: 'statusReady',
   },
 ];

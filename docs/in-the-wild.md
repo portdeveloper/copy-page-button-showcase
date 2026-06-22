@@ -41,4 +41,4 @@ Sits alongside the "Edit this page" link on the article toolbar.
 
 ## Full adopter list
 
-The complete list of source-confirmed adopters is on the [showcase homepage](/). PRs in flight (Lexical, Ionic, Seeed Studio Wiki, and others) are tracked there too.
+The complete list of source-confirmed adopters is on the [showcase homepage](/). PRs in flight (Cypress, Uniswap, BandChain, Capacitor) are tracked there too.
