@@ -38,4 +38,4 @@ Sits alongside the "Edit this page" link on the article toolbar.
 
 ## Full adopter list
 
-The complete list of source-confirmed adopters is on the [showcase homepage](/copy-page-button-showcase/) . PRs in flight (Cypress, Uniswap, BandChain, Capacitor) are tracked there too.
+The complete list of source-confirmed adopters is on the [showcase homepage](/copy-page-button-showcase/) . PRs in flight (Cypress, Uniswap, Osmosis, BandChain, Capacitor, Lerna, Sequelize) are tracked there too.
