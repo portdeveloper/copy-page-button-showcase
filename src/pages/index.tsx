@@ -94,6 +94,13 @@ const reviewItems = [
     tone: 'statusReady',
   },
   {
+    site: 'Osmosis docs',
+    href: 'https://github.com/osmosis-labs/docs/pull/342',
+    status: 'In review',
+    detail: 'Maintainer engaged positively; aligning on the LLM-handoff angle.',
+    tone: 'statusReady',
+  },
+  {
     site: 'BandChain docs',
     href: 'https://github.com/bandprotocol/bandchain-docs/pull/93',
     status: 'Open',
@@ -105,6 +112,20 @@ const reviewItems = [
     href: 'https://github.com/ionic-team/capacitor-docs/pull/556',
     status: 'Open',
     detail: "Ionic's Capacitor docs — open PR awaiting review.",
+    tone: 'statusReady',
+  },
+  {
+    site: 'Lerna',
+    href: 'https://github.com/lerna/lerna/pull/4368',
+    status: 'Open',
+    detail: 'Open PR awaiting maintainer review.',
+    tone: 'statusReady',
+  },
+  {
+    site: 'Sequelize',
+    href: 'https://github.com/sequelize/website/pull/840',
+    status: 'Open',
+    detail: 'Open PR; checks green, awaiting maintainer review.',
     tone: 'statusReady',
   },
 ];
@@ -195,7 +216,7 @@ function AdoptionSection() {
     <section className={styles.adoptionSection}>
       <div className={styles.reviewHeader}>
         <Heading as="h3">In review</Heading>
-        <p>Recent PRs adding the plugin, last checked on June 9, 2026.</p>
+        <p>Recent PRs adding the plugin, last checked on June 26, 2026.</p>
       </div>
       <div className={styles.adoptionGrid}>
         {reviewItems.map((item) => (
